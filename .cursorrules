@@ -1,0 +1,109 @@
+# React + Vite Project Rules
+
+## Project Structure
+- Use the src/ directory for all application code
+- Place components in src/components/ with their own folders
+- Keep assets in src/assets/
+- Use public/ only for static files that don't need processing
+- Follow the atomic folder structure for modularity - pages/organisms/molecules/atoms
+
+## React Components
+- Use functional components with hooks instead of class components
+- Prefer named exports for components
+- Use PascalCase for component names and file names
+- Include PropTypes or TypeScript for type checking
+- Keep components small and focused on a single responsibility
+
+## File Naming Conventions
+- Components: PascalCase (e.g., UserProfile.jsx)
+- Utilities/helpers: camelCase (e.g., formatDate.js)
+- Constants: UPPER_SNAKE_CASE (e.g., API_ENDPOINTS.js)
+- CSS files: match component names (e.g., UserProfile.css)
+
+## Code Style
+- Use JSX syntax for React components
+- Prefer const and let over var
+- Use arrow functions for inline handlers
+- Use template literals for string interpolation
+- Prefer destructuring for props and state
+
+## State Management
+- Use useState for local component state
+- Use useEffect for side effects
+- Consider useReducer for complex state logic
+- Lift state up when needed by multiple components
+- Use redux toolkit for state management
+
+## Styling
+- For component-specific styles, use either CSS Modules or styled-components.
+- Do not use utility-first or component library CSS frameworks (e.g., Tailwind, Bootstrap, shadcn, etc.).
+- Keep global styles in index.css
+- Use semantic class names
+- Prefer CSS Grid and Flexbox for layouts
+- All CSS to be externalized in respective files. no inline css.
+- Use only dynamic CSS sizing units such as %, rem, em, or vw/vh. Avoid fixed pixel (px) values for sizing.
+- All components and styles must support three themes: dark, light, and pastel.
+- Implement a theme-switching feature to allow users to toggle between these themes.
+
+## Static Content
+- Externalize all static content (such as text, labels, and messages) in a language.json file. Do not include any static content directly in component files.
+- Store all URLs and asset references in dedicated constants files. Components must not contain hardcoded URLs or asset paths.
+
+## Performance
+- Use React.memo() for expensive components
+- Implement proper key props for lists
+- Avoid inline object/function definitions in render
+- Use useCallback and useMemo when appropriate
+
+## Imports
+- Use absolute imports when configured
+- Group imports: React imports first, then third-party, then local
+- Use named imports when possible
+- Avoid default exports for utilities
+
+## Error Handling
+- Implement error boundaries for component trees
+- Handle async operations with proper error states
+- Provide meaningful error messages to users
+
+## Testing
+- Write tests for components and utilities
+- Use React Testing Library for component testing
+- Test user interactions, not implementation details
+
+## Accessibility
+- Use semantic HTML elements
+- Include proper ARIA attributes
+- Ensure keyboard navigation works
+- Provide alt text for images
+- Maintain good color contrast
+
+## Environment
+- Use environment variables for configuration
+- Keep sensitive data out of the client bundle
+- Use .env files for local development settings
+
+## Build & Deployment
+- Optimize bundle size with proper tree shaking
+- Use lazy loading for route-based code splitting
+- Minimize and compress assets for production
+- Implement proper caching strategies 
+
+## General
+- Add explanatory comments in code where clarity is needed.
+- [HIGH PRIORITY] All components and their CSS **must** be fully responsive and adapt gracefully to all screen sizes and aspect ratios. This requirement takes precedence over any other rule in this file.
+
+## API Integration
+- All API endpoints must be stored in a dedicated constants file (e.g., `apiEndpoints.js`). Do not hardcode URLs in components or utilities.
+- Use a centralized API utility (e.g., `apiClient.js`) for all HTTP requests. This utility should handle:
+  - Base URL configuration via environment variables
+  - Request and response interceptors for authentication, error handling, and logging
+  - Automatic token refresh and retry logic for authentication failures
+  - Consistent error object structure for consumers
+- Always handle loading, success, and error states in UI components consuming API data.
+- Use async/await syntax for all asynchronous API calls.
+- Validate and sanitize all data sent to and received from APIs.
+- Use abort controllers or cancellation logic to prevent memory leaks in components that unmount during API calls.
+- Document all API utility functions and endpoints.
+- Do not expose sensitive API keys or secrets in the client bundle; use environment variables.
+- Prefer using React Query or SWR for data fetching, caching, and synchronization when appropriate.
