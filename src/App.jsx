@@ -6,6 +6,7 @@ import Home from './screens/Home';
 import About from './screens/About';
 import Dashboard from './pages/Dashboard';
 import Login from './pages/Login';
+import AIToolsPage from './pages/AIToolsPage';
 import './App.css';
 
 function App() {
@@ -23,23 +24,17 @@ function App() {
           {/* Protected Routes - With Header/Footer + Auth Check */}
           <Route path="/" element={
             <ProtectedLayout>
-              <Dashboard />
+              <AIToolsPage />
+            </ProtectedLayout>
+          } />
+          
+          <Route path="/ai-tools" element={
+            <ProtectedLayout>
+              <AIToolsPage />
             </ProtectedLayout>
           } />
           
           <Route path="/dashboard" element={
-            <ProtectedLayout>
-              <Dashboard />
-            </ProtectedLayout>
-          } />
-          
-          <Route path="/public-library" element={
-            <ProtectedLayout>
-              <Dashboard />
-            </ProtectedLayout>
-          } />
-          
-          <Route path="/private-library" element={
             <ProtectedLayout>
               <Dashboard />
             </ProtectedLayout>

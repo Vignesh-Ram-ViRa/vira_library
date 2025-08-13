@@ -11,9 +11,9 @@ const Header = () => {
   const content = LANGUAGE_CONTENT;
 
   const navigation = [
-    { path: '/', label: content.navigation.dashboard, icon: 'home' },
-    { path: '/public-library', label: content.navigation.publicLibrary, icon: 'folder' },
-    { path: '/private-library', label: content.navigation.privateLibrary, icon: 'lock' }
+    { path: '/', label: content.navigation.aiTools, icon: 'starFull' },
+    { path: '/dashboard', label: content.navigation.dashboard, icon: 'home' },
+    { path: '/about', label: 'About', icon: 'info' }
   ];
 
   const isActivePath = (path) => {

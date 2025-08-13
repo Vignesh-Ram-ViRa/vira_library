@@ -1,13 +1,14 @@
 export const LANGUAGE_CONTENT = {
   // App Name and Branding
-  appName: "Vira Library",
-  tagline: "Personal Knowledge & Resource Management",
+  appName: "AI Tools Library",
+  tagline: "Discover & Organize AI Tools",
   
   // Navigation
   navigation: {
     dashboard: "Dashboard",
-    publicLibrary: "Public Library", 
-    privateLibrary: "Private Library",
+    aiTools: "AI Tools",
+    myTools: "My Tools", 
+    categories: "Categories",
     login: "Login",
     logout: "Logout",
     home: "Home"
@@ -15,8 +16,8 @@ export const LANGUAGE_CONTENT = {
   
   // Authentication
   auth: {
-    loginTitle: "Welcome to Vira Library",
-    loginSubtitle: "Sign in to manage your knowledge base",
+    loginTitle: "Welcome to AI Tools Library",
+    loginSubtitle: "Sign in to discover and manage AI tools",
     email: "Email",
     password: "Password",
     loginButton: "Sign In",
@@ -32,27 +33,27 @@ export const LANGUAGE_CONTENT = {
     title: "Dashboard",
     welcome: "Welcome to Vira Library",
     description: "Organize and manage your knowledge, resources, and learning materials in this comprehensive digital library. From research notes to technical documentation, keep everything accessible and well-organized.",
-    heroTitle: "Welcome to Vira Library",
-    heroSubtitle: "Your personal knowledge and resource management platform",
-    heroDescription: "Discover, organize, and access your learning materials, notes, and resources in a beautiful, structured way.",
-    allResources: "All Resources",
-    featuredResources: "Featured Resources",
-    recentResources: "Recent Resources"
+    heroTitle: "Welcome to AI Tools Library",
+    heroSubtitle: "Your comprehensive AI tools discovery platform",
+    heroDescription: "Discover, explore, and organize the best AI tools across all categories. From chatbots to image generators, find the perfect AI solution for your needs.",
+    allResources: "All Tools",
+    featuredResources: "Featured Tools",
+    recentResources: "Recent Tools"
   },
   
-  // Resources (replacing Projects)
-  resources: {
-    title: "Resources",
-    subtitle: "A curated collection of knowledge, notes, documents, and learning materials.",
-    searchPlaceholder: "Search by title, description, category, or topic...",
-    addResource: "Add Resource",
-    editResource: "Edit Resource",
-    deleteResource: "Delete Resource",
-    viewResource: "View Resource",
-    noResults: "No resources found",
-    noResultsDescription: "Try adjusting your search terms or clearing the search to see all resources.",
+  // AI Tools
+  aiTools: {
+    title: "AI Tools",
+    subtitle: "A comprehensive collection of AI tools, services, and applications for every need.",
+    searchPlaceholder: "Search by name, description, category, or tags...",
+    addTool: "Add AI Tool",
+    editTool: "Edit Tool",
+    deleteTool: "Delete Tool",
+    viewTool: "View Tool",
+    noResults: "No AI tools found",
+    noResultsDescription: "Try adjusting your search terms or clearing the search to see all tools.",
     clearSearch: "Clear Search",
-    resultsFound: "resources found",
+    resultsFound: "tools found",
     
     // Grid/List view
     gridView: "Grid View",
@@ -60,51 +61,87 @@ export const LANGUAGE_CONTENT = {
     
     // Sorting
     sortBy: "Sort by",
-    sortTitle: "Title",
-    sortDate: "Date",
+    sortTitle: "Name",
+    sortDate: "Date Added",
     sortCategory: "Category",
-    sortStatus: "Status",
+    sortRating: "Rating",
+    sortPrice: "Price",
     
-    // Export
+    // Export & Import
     exportExcel: "Export to Excel",
     bulkUpload: "Bulk Upload",
+    uploadCSV: "Upload CSV File",
+    downloadTemplate: "Download Template",
     
-    // Status
-    status: {
-      notStarted: "To Read",
-      inProgress: "In Progress", 
-      completed: "Completed"
+    // Pricing
+    pricing: {
+      free: "Free",
+      paid: "Paid",
+      freemium: "Freemium",
+      all: "All Pricing"
+    },
+    
+    // Categories
+    categories: {
+      all: "All Categories",
+      treasureTrove: "Treasure Trove",
+      talkativeTech: "Talkative Tech", 
+      pixelPlayhouse: "Pixel Playhouse",
+      mediaMayhem: "Media Mayhem",
+      siteSorcery: "Site Sorcery",
+      sidekicks: "Sidekicks",
+      roboRoutines: "Robo Routines",
+      researchRodeos: "Research Rodeos",
+      randomRiffs: "Random Riffs"
     },
     
     // Actions
-    viewLink: "View Link",
-    downloadFile: "Download File",
+    viewWebsite: "Visit Website",
+    addToFavorites: "Add to Favorites",
+    removeFromFavorites: "Remove from Favorites",
+    rateTool: "Rate This Tool",
+    shareTool: "Share Tool",
     
     // Form fields
     form: {
-      title: "Resource Title",
+      name: "Tool Name",
       description: "Description", 
-      link: "External Link",
-      file: "File Attachment",
+      link: "Website URL",
       category: "Category",
+      subCategory: "Sub Category",
+      priceStructure: "Pricing Model",
+      priceDetails: "Pricing Details",
       tags: "Tags",
-      status: "Status",
-      featured: "Featured Resource",
-      private: "Private Resource",
-      image: "Preview Image",
-      uploadImage: "Upload Image",
-      changeImage: "Change Image",
+      logoUrl: "Logo URL",
+      screenshots: "Screenshots",
+      comments: "Comments",
+      isFavourite: "Add to Favorites",
+      rating: "Your Rating",
       
       // Validation messages
-      titleRequired: "Resource title is required",
+      nameRequired: "Tool name is required",
       descriptionRequired: "Description is required",
+      linkRequired: "Website URL is required",
+      categoryRequired: "Category is required",
+      priceStructureRequired: "Pricing model is required",
       invalidUrl: "Please enter a valid URL",
       
       // Actions
-      save: "Save Resource",
+      save: "Save Tool",
       cancel: "Cancel",
       delete: "Delete",
       confirm: "Confirm"
+    },
+    
+    // Rating & Reviews
+    rating: {
+      title: "Rate & Review",
+      placeholder: "Share your experience with this tool...",
+      submit: "Submit Review",
+      update: "Update Review",
+      avgRating: "Average Rating",
+      totalReviews: "Reviews",
+      noReviews: "No reviews yet"
     }
   },
   
@@ -141,21 +178,24 @@ export const LANGUAGE_CONTENT = {
   
   // Success messages
   success: {
-    resourceCreated: "Resource created successfully!",
-    resourceUpdated: "Resource updated successfully!",
-    resourceDeleted: "Resource deleted successfully!",
-    fileUploaded: "File uploaded successfully!",
-    dataExported: "Data exported successfully!"
+    toolCreated: "AI tool added successfully!",
+    toolUpdated: "AI tool updated successfully!",
+    toolDeleted: "AI tool deleted successfully!",
+    ratingSubmitted: "Rating submitted successfully!",
+    dataExported: "Data exported successfully!",
+    dataImported: "Data imported successfully!",
+    favoriteAdded: "Added to favorites!",
+    favoriteRemoved: "Removed from favorites!"
   },
   
   // Footer
   footer: {
-    copyright: "© 2025 Vira Library. All rights reserved.",
+    copyright: "© 2025 AI Tools Library. All rights reserved.",
     socialLinks: {
       github: "https://github.com/Vignesh-Ram-ViRa",
       linkedin: "https://linkedin.com/in/vignesh-ram-vira",
       twitter: "https://twitter.com/VigneshRamViRa",
-      email: "mailto:contact@viralibrary.dev"
+      email: "mailto:contact@aitoolslibrary.dev"
     }
   }
 }; 

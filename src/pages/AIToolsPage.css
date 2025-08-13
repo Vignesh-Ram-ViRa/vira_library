@@ -1,0 +1,346 @@
+.ai-tools-page {
+  min-height: 100vh;
+  background: var(--background-color);
+  padding: 2rem;
+}
+
+/* Page Header */
+.ai-tools-header {
+  margin-bottom: 2rem;
+}
+
+.header-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.header-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.page-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0 0 0.5rem;
+  line-height: 1.1;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-color-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.page-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.5;
+  max-width: 40rem;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.add-tool-btn {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-color-dark));
+  box-shadow: 0 0.5rem 1rem rgba(var(--primary-rgb), 0.3);
+}
+
+.export-btn {
+  background: var(--surface-color);
+  border: 0.0625rem solid var(--border-color);
+}
+
+/* Filters Section */
+.ai-tools-filters {
+  background: var(--surface-color);
+  border: 0.0625rem solid var(--border-color);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  
+  /* Glassmorphism effect */
+  background-image: 
+    linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    linear-gradient(45deg, rgba(255, 255, 255, 0.05) 0%, transparent 100%);
+  backdrop-filter: blur(0.5rem);
+  box-shadow: 
+    0 0.5rem 2rem rgba(0, 0, 0, 0.05),
+    inset 0 0.0625rem 0 rgba(255, 255, 255, 0.1);
+}
+
+.filters-row {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.view-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Results Info */
+.ai-tools-results-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.results-count {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.active-filter {
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-left: 0.25rem;
+}
+
+.sort-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sort-controls label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.sort-select {
+  padding: 0.5rem 0.75rem;
+  border: 0.0625rem solid var(--border-color);
+  border-radius: 0.5rem;
+  background: var(--surface-color);
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  min-width: 10rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sort-select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.125rem rgba(var(--primary-rgb), 0.1);
+}
+
+/* Tools Content */
+.ai-tools-content {
+  flex: 1;
+}
+
+/* Error State */
+.error-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 24rem;
+  text-align: center;
+  padding: 2rem;
+}
+
+.error-icon {
+  width: 4rem;
+  height: 4rem;
+  color: var(--text-secondary);
+  opacity: 0.5;
+  margin-bottom: 1rem;
+}
+
+.error-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.error-state h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 0.5rem;
+}
+
+.error-state p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin: 0 0 1.5rem;
+  max-width: 24rem;
+}
+
+/* Responsive Design */
+@media (max-width: 64rem) {
+  .ai-tools-page {
+    padding: 1.5rem;
+  }
+  
+  .page-title {
+    font-size: 2.5rem;
+  }
+  
+  .page-subtitle {
+    font-size: 1.125rem;
+  }
+  
+  .ai-tools-filters {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 48rem) {
+  .ai-tools-page {
+    padding: 1rem;
+  }
+  
+  .header-content {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+  
+  .header-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .page-title {
+    font-size: 2rem;
+  }
+  
+  .page-subtitle {
+    font-size: 1rem;
+  }
+  
+  .ai-tools-filters {
+    padding: 1rem;
+  }
+  
+  .filters-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+  
+  .view-controls {
+    justify-content: center;
+  }
+  
+  .ai-tools-results-info {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    gap: 0.75rem;
+  }
+  
+  .sort-controls {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 30rem) {
+  .ai-tools-page {
+    padding: 0.5rem;
+  }
+  
+  .ai-tools-header {
+    margin-bottom: 1rem;
+  }
+  
+  .page-title {
+    font-size: 1.75rem;
+  }
+  
+  .ai-tools-filters {
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+  }
+  
+  .ai-tools-results-info {
+    margin-bottom: 1rem;
+  }
+  
+  .header-actions {
+    gap: 0.5rem;
+  }
+  
+  .results-count {
+    font-size: 0.875rem;
+  }
+  
+  .sort-select {
+    min-width: 8rem;
+    font-size: 0.8125rem;
+  }
+}
+
+/* Theme-specific adjustments */
+[data-theme="dark"] .ai-tools-filters {
+  background-image: 
+    linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+    linear-gradient(45deg, rgba(255, 255, 255, 0.02) 0%, transparent 100%);
+}
+
+[data-theme="pastel"] .ai-tools-filters {
+  background-image: 
+    linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
+    linear-gradient(45deg, rgba(255, 255, 255, 0.15) 0%, transparent 100%);
+}
+
+/* Loading states */
+.ai-tools-content.loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+/* Focus styles */
+.add-tool-btn:focus,
+.export-btn:focus {
+  outline: 0.125rem solid var(--primary-color);
+  outline-offset: 0.125rem;
+}
+
+/* Hover effects */
+.add-tool-btn:hover {
+  transform: translateY(-0.125rem);
+  box-shadow: 0 0.75rem 1.5rem rgba(var(--primary-rgb), 0.4);
+}
+
+.export-btn:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-0.125rem);
+}
+
+/* Animation for page entrance */
+.ai-tools-page {
+  animation: page-enter 0.5s ease-out;
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} 

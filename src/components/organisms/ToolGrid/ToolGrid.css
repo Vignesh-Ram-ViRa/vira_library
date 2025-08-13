@@ -1,0 +1,222 @@
+.tool-grid {
+  width: 100%;
+}
+
+.tool-grid__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  gap: 2rem;
+  padding: 0;
+}
+
+.tool-grid__loading {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  gap: 2rem;
+  padding: 0;
+}
+
+/* Empty State */
+.tool-grid__empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 24rem;
+  padding: 2rem;
+}
+
+.empty-state {
+  text-align: center;
+  max-width: 24rem;
+}
+
+.empty-state__icon {
+  width: 4rem;
+  height: 4rem;
+  margin: 0 auto 1.5rem;
+  color: var(--text-secondary);
+  opacity: 0.5;
+}
+
+.empty-state__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.empty-state__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 0.5rem;
+}
+
+.empty-state__description {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Loading Skeleton */
+.tool-card-skeleton {
+  position: relative;
+  background: var(--surface-color);
+  border: 0.0625rem solid var(--border-color);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  height: 24rem;
+  overflow: hidden;
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--surface-secondary) 25%,
+    var(--border-color) 50%,
+    var(--surface-secondary) 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+  border-radius: 0.5rem;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.skeleton--badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 4rem;
+  height: 1.5rem;
+  border-radius: 1rem;
+}
+
+.skeleton--heart {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+}
+
+.skeleton--logo {
+  width: 4rem;
+  height: 4rem;
+  margin: 3rem auto 1.5rem;
+  border-radius: 0.75rem;
+}
+
+.skeleton--title {
+  width: 70%;
+  height: 1.5rem;
+  margin: 0 auto 1rem;
+}
+
+.skeleton--description {
+  width: 100%;
+  height: 1rem;
+  margin: 0 auto 0.5rem;
+}
+
+.skeleton--description:last-of-type {
+  width: 80%;
+}
+
+.skeleton--category {
+  width: 6rem;
+  height: 1rem;
+  margin: 1rem auto;
+}
+
+.skeleton--tags {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.skeleton--tag {
+  width: 2.5rem;
+  height: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.skeleton--button {
+  width: 100%;
+  height: 2.5rem;
+  margin-top: auto;
+  border-radius: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 75rem) {
+  .tool-grid__container,
+  .tool-grid__loading {
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 48rem) {
+  .tool-grid__container,
+  .tool-grid__loading {
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    gap: 1rem;
+  }
+  
+  .tool-card-skeleton {
+    padding: 1rem;
+    height: 20rem;
+  }
+  
+  .skeleton--logo {
+    width: 3rem;
+    height: 3rem;
+    margin: 2rem auto 1rem;
+  }
+}
+
+@media (max-width: 36rem) {
+  .tool-grid__container,
+  .tool-grid__loading {
+    grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  }
+}
+
+@media (max-width: 30rem) {
+  .tool-grid__container,
+  .tool-grid__loading {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .tool-card-skeleton {
+    height: 18rem;
+  }
+  
+  .empty-state {
+    padding: 1rem;
+  }
+  
+  .empty-state__icon {
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .empty-state__title {
+    font-size: 1.25rem;
+  }
+  
+  .empty-state__description {
+    font-size: 0.875rem;
+  }
+} 
