@@ -1,0 +1,68 @@
+/* Icon Component Styles */
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: currentColor;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+/* Size variants */
+.icon--small {
+  font-size: 1rem;
+  width: 1rem;
+  height: 1rem;
+}
+
+.icon--medium {
+  font-size: 1.25rem;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.icon--large {
+  font-size: 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.icon--xl {
+  font-size: 2rem;
+  width: 2rem;
+  height: 2rem;
+}
+
+/* Clickable state */
+.icon--clickable {
+  cursor: pointer;
+  border-radius: 0.25rem;
+  padding: 0.25rem;
+  margin: -0.25rem;
+}
+
+.icon--clickable:hover {
+  background-color: var(--color-surface);
+  color: var(--color-primary);
+  transform: scale(1.1);
+}
+
+.icon--clickable:active {
+  transform: scale(0.95);
+}
+
+/* Focus styles for accessibility */
+.icon--clickable:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Theme-specific adjustments */
+[data-theme="dark"] .icon--clickable:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="pastel"] .icon--clickable:hover {
+  background-color: rgba(139, 95, 191, 0.1);
+} 
